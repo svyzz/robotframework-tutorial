@@ -40,6 +40,12 @@ htmlcov/
 nosetests.xml
 coverage.xml
 
+# Robotframework reports and logs
+log.html
+output.xml
+report.html
+*.png
+
 # Translations
 *.mo
 *.pot
