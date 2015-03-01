@@ -9,7 +9,7 @@ Suite Setup       Open Browser To Landing Page
 Suite Teardown    Close Browser
 Test Teardown     Perform Another Calculation
 Test Template     Tax on Annual Income
-Resource          resource_data-driven.txt
+Resource          ../resources/resource_data-driven.txt
 
 
 *** Test Cases ***                            Category      Year                             Income      Tax                Name
