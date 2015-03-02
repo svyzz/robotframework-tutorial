@@ -2,7 +2,7 @@
 Library           Selenium2Library
 
 *** Variables ***
-${BROWSER}                  Chrome
+${BROWSER}                  PhantomJS
 ${WEBDRIVER_DELAY}          0
 ${IMPLICIT_WAIT}            1
 ${LANDING_PAGE_URL}         http://www.ird.govt.nz/calculators/tool-name/tools-t/calculator-tax-rate.html?id=homepage
