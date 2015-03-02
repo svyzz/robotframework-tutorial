@@ -7,7 +7,7 @@ Library          FakerLibrary
 
 
 *** Variables ***
-${BROWSER}               Chrome
+${BROWSER}               PhantomJS
 ${WEBDRIVER_DELAY}       0
 ${IMPLICIT_WAIT}         1
 ${LANDING_PAGE_GITHUB}   http://assurity.co.nz/
