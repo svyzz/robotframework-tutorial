@@ -28,12 +28,8 @@ Verify Elements On The Landing Page
     [Documentation]                  Verifies a LONG LIST of the elements on the Assurity home page
     Element Should Be Visible        xpath=//div[@class="navbar-header"]/a/img
     Page Should Contain Image        xpath=//*[@id="page-top"]/section/div/div/div[2]/div/img
-    Page Should Contain Link         link=Our clients
-    Page Should Contain Link         link=Our services
-    Page Should Contain Link         link=About us
-    Page Should Contain Link         link=Community
-    Page Should Contain Link         link=Careers
-    Page Should Contain Link         link=Education
+    Page Should Contain Link         link=enquiries@assurity.co.nz
+    Page Should Contain Link         link=careers@assurity.co.nz
     Page Should Contain Button       id=BootstrapForm_Subscribe_action_submitSubscribe
     Page Should Contain Textfield    id=BootstrapForm_Subscribe_Name
 
