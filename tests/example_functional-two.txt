@@ -1,0 +1,13 @@
+*** Settings ***
+Documentation     A test suite that contains a test case (is a candiate for data driven testing)
+...               that fills out a form and asks Jad a question!
+Test Setup        Go To Jad's Profile
+Test Teardown     Close Browser
+Resource          ../resources/resource_functional.txt
+
+
+*** Test Cases ***
+Filling Out Forms
+    [Documentation]    This test case fills out a form and submits data!
+    [Tags]             functional    selenium    forms
+    Ask Jad A Question

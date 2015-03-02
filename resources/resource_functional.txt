@@ -1,0 +1,67 @@
+*** Settings ***
+Documentation    Apart from demonstrating how functional tests look like in RobotFramework,
+...              this resource also demonstrates the flexibility in terms of browser usage with
+...              the Selenium2Library. NOTE the usage of PhantomJS which runs headless.
+Library          Selenium2Library
+Library          FakerLibrary
+
+
+*** Variables ***
+${BROWSER}               Chrome
+${WEBDRIVER_DELAY}       0
+${IMPLICIT_WAIT}         1
+${LANDING_PAGE_GITHUB}   http://assurity.co.nz/
+${LANDING_PAGE_TITLE}    Software Testing Consultancy, Tools and Training | Assurity Consulting, Wellington, Auckland, Christchurch, NZ
+${JAD}                   http://assurity.co.nz/about-us/our-people/jad-pamment/
+
+
+*** Keywords ***
+Open Browser To Better Software
+    [Documentation]               This keyword navigates to Assurity's website and is used as the starting point.
+    Open Browser                  ${LANDING_PAGE_GITHUB}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed            ${WEBDRIVER_DELAY}
+    Set Selenium Implicit Wait    ${IMPLICIT_WAIT}
+    Title Should Be               ${LANDING_PAGE_TITLE}
+
+Verify Elements On The Landing Page
+    [Documentation]                  Verifies a LONG LIST of the elements on the Assurity home page
+    Element Should Be Visible        xpath=//div[@class="navbar-header"]/a/img
+    Page Should Contain Image        xpath=//*[@id="page-top"]/section/div/div/div[2]/div/img
+    Page Should Contain Link         link=Our clients
+    Page Should Contain Link         link=Our services
+    Page Should Contain Link         link=About us
+    Page Should Contain Link         link=Community
+    Page Should Contain Link         link=Careers
+    Page Should Contain Link         link=Education
+    Page Should Contain Button       id=BootstrapForm_Subscribe_action_submitSubscribe
+    Page Should Contain Textfield    id=BootstrapForm_Subscribe_Name
+
+Verify Text On The Landing Page
+    [Documentation]            Verifies a LONG LIST of textual elements on the Assurity home page
+    Page Should Contain        'Better at Better'
+    Page Should Contain        Follow us
+    Page Should Contain        Interested in a better career?
+    Page Should Contain        Offices
+    Page Should Contain        Newsletters
+    Page Should Contain        Auckland
+    Page Should Contain        Wellington
+    Page Should Contain        Christchurch
+    Page Should Contain        Say hello
+    Page Should Not Contain    Deliver Terrible Software!
+
+Go To Jad's Profile
+    [Documentation]               Navigate to Jad Pamment's Assurity profile page!
+    Open Browser                  ${JAD}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed            ${WEBDRIVER_DELAY}
+    Set Selenium Implicit Wait    ${IMPLICIT_WAIT}
+
+Ask Jad A Question
+    [Documentation]    Fill out form data using the FakerLibrary and ask Jad a random question!
+    ${question}=                FakerLibrary.Words
+    ${email}=                   FakerLibrary.Email
+    Input Text                  id=BootstrapForm_AskQuestion_Question    ${question}
+    Input Text                  id=BootstrapForm_AskQuestion_Email       ${email}
+    Click Button                id=BootstrapForm_AskQuestion_action_submitQuestion
+    Wait Until Page Contains    Thanks for your question! We will get back to you shortly

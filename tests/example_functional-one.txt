@@ -1,0 +1,14 @@
+*** Settings ***
+Documentation     A test suite that describes how functional tests look like
+...               when written using RobotFramework.
+Test Setup        Open Browser To Better Software
+Test Teardown     Close Browser
+Resource          ../resources/resource_functional.txt
+
+
+*** Test Cases ***
+Validate Landing Page
+    [Documentation]    This test case validates ALL HTML elements on Assurity's landing page
+    [Tags]             functional    selenium
+    Verify Elements On The Landing Page
+    Verify Text On The Landing Page
