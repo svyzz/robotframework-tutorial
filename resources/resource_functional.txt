@@ -2,6 +2,9 @@
 Documentation    Apart from demonstrating how functional tests look like in RobotFramework,
 ...              this resource also demonstrates the flexibility in terms of browser usage with
 ...              the Selenium2Library. NOTE the usage of PhantomJS which runs headless.
+...
+...              We also use the 'external' Faker Library here. It appears to go REALLY WELL
+...              with Selenium!
 Library          Selenium2Library
 Library          FakerLibrary
 

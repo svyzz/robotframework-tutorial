@@ -1,0 +1,37 @@
+*** Settings ***
+Documentation    A test case that moves away from the Selenium2Library and uses the BuiltIn
+...              and the String libraries. NOTE how fast the test executes and also note
+...              how keywords can be written as Gherkin style BDD tests!
+...
+...              Those with a keen eye would have also noticed that ALL variables have been set as
+...              as suite variables and that the final keyword is a convoluted conditional block.
+...              Those with an even keener eye would have noticed that this test is self contained
+...              and does not import any resource file.
+Library          String
+Library          BuiltIn
+
+
+*** Test Cases ***
+Addition
+    Given A Randomly Generated String
+    When The Character Count Is Less Than 10
+    and The String Does Not Contain "e"
+    Then Convert String To Uppercase
+
+
+*** Keywords ***
+A Randomly Generated String
+    ${random}=            Generate Random String
+    Set Suite Variable    ${random}
+
+The Character Count Is Less Than 10
+    ${count}=    Get Length    ${random}
+    Set Suite Variable         ${count}
+
+The String Does Not Contain "e"
+    ${status}=    Run Keyword And Return Status    Should Not Contain    ${random}    e
+    Set Suite Variable    ${status}
+
+Convert String To Uppercase
+    ${random}=    Run Keyword If    ${count} < 10 and ${status} == True    Convert To Uppercase    ${random}
+    Log Variables

@@ -1,4 +1,9 @@
 *** Settings ***
+Documentation     This resource file contains keywords and generic Selenium Webdriver settings used to execute
+...               data-driven tests. Each of the keywords describe what they do in a single line [Documentation]
+...               keyword.
+...               NOTE that the browser used is PhantomJS. Chrome and Firefox require Xvfb and that is way too much
+...               work for now! PhantomJS however appears to have issues with taking screenshots.
 Library           Selenium2Library
 
 *** Variables ***

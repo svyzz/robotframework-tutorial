@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation     A test suite that describes how functional tests look like
 ...               when written using RobotFramework.
+...               This test case validates a list of HTML elements on Assurity's
+...               home page.
 Test Setup        Open Browser To Better Software
 Test Teardown     Close Browser
 Resource          ../resources/resource_functional.txt
