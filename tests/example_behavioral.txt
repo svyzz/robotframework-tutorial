@@ -12,7 +12,7 @@ Library          BuiltIn
 
 
 *** Test Cases ***
-Addition
+String Manipulation
     Given A Randomly Generated String
     When The Character Count Is Less Than 10
     and The String Does Not Contain "e"
