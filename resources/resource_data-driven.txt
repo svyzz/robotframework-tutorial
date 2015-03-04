@@ -7,7 +7,7 @@ Documentation     This resource file contains keywords and generic Selenium Webd
 Library           Selenium2Library
 
 *** Variables ***
-${BROWSER}                  PhantomJS
+${BROWSER}                  Chrome
 ${WEBDRIVER_DELAY}          0
 ${IMPLICIT_WAIT}            1
 ${LANDING_PAGE_URL}         http://www.ird.govt.nz/calculators/tool-name/tools-t/calculator-tax-rate.html?id=homepage
