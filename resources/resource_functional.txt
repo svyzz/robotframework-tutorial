@@ -10,9 +10,9 @@ Library          FakerLibrary
 
 
 *** Variables ***
-${BROWSER}               Chrome
-${WEBDRIVER_DELAY}       0
-${IMPLICIT_WAIT}         1
+${BROWSER}                 Chrome
+${WEBDRIVER_DELAY}         0
+${IMPLICIT_WAIT}           1
 ${LANDING_PAGE_ASSURITY}   http://assurity.co.nz/
 ${LANDING_PAGE_TITLE}      Software Testing Consultancy, Tools and Training | Assurity Consulting, Wellington, Auckland, Christchurch, NZ
 ${JAD}                     http://assurity.co.nz/about-us/our-people/jad-pamment/
@@ -57,7 +57,7 @@ Go To Jad's Profile
     Set Selenium Implicit Wait    ${IMPLICIT_WAIT}
 
 Ask Jad A Question
-    [Documentation]    Fill out form data using the FakerLibrary and ask Jad a random question!
+    [Documentation]             Fill out form data using the FakerLibrary and ask Jad a random question!
     ${question}=                FakerLibrary.Words
     ${email}=                   FakerLibrary.Email
     Input Text                  id=BootstrapForm_AskQuestion_Question    ${question}
