@@ -87,6 +87,7 @@
 						<p><span class="fragment"><em>Python 2.7.xx</em> and <em>pip</em></span></p>
 						<p><span class="fragment"><em>RIDE</em> if necessary</span></p>
 						<p><span class="fragment"><em>Notepad++ and SublimeText</em> work too!</span></p>
+						<p><span class="fragment"><em>Trivial to use with</em> ANY <em>version control system</em></span></p>
 					</section>
 				</section>
 
@@ -98,6 +99,48 @@
 					<p><span class="fragment"><em>New keywords</em> can be written in <em>Python or Java</em></span></p>
 					<p><span class="fragment"><em>Keywords</em> are executed <em>until an exception is encountered</em></span></p>
 				</section>
+
+				<section>
+					<h2>Hello Robot!</h2>
+					<pre><code data-trim contenteditable>
+*** Settings ***
+Library    Selenium2Library
+
+
+*** Test Cases ***
+Hello World
+    Open Browser    http://www.google.com
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Simple keyword driven syntax</h2>
+					<pre><code data-trim contenteditable>
+*** Test Cases ***
+Valid Login
+    Open Browser To Login Page
+    Input Username                      username
+    Input Password                      password
+    Submit Credentials
+    Welcome Page Should Be Displayed    
+    [Teardown]                          Close Browser
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Data Driven Tests</h2>
+					<pre><code data-trim contenteditable>
+*** Test Cases ***    USERNAME         PASSWORD
+Invalid Username      invalid          ${VALID_PASSWORD}
+Invalid Password      ${VALID_USER}    invalid
+Both Invalid          invalid          invalid
+Empty Username        ${EMPTY}         ${VALID_PASSWORD}
+Empty Password        ${VALID_USER}    ${EMPTY}
+Both Empty            ${EMPTY}         ${EMPTY}
+					</code></pre>
+				</section>
+
+
 
 				<section>
 					<h1>Reveal.js</h1>
