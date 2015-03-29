@@ -74,6 +74,20 @@
 						<p><span class="fragment"><em>Smaller learning curve </em>when compared to other tools</span></p>
 						<p><span class="fragment"><em>Multiple approaches</em> to writing tests</span></p>
 					</section>
+
+					<section>
+						<h2>Big Ticket Users</h2>
+						<ul>
+							<li>Plone</li>
+							<li>Texas Instruments</li>
+							<li>Nokia Siemens Networks</li>
+							<li>Belgian Post</li>
+							<li>CERN</li>
+							<li>Western Digital</li>
+							<li>Symantec</li>
+							<li>Cisco</li>
+							<li>Alcatel Lucent</li>
+					</section>
 				</section>
 
 				<section>
@@ -139,6 +153,55 @@ Empty Password        ${VALID_USER}    ${EMPTY}
 Both Empty            ${EMPTY}         ${EMPTY}
 					</code></pre>
 				</section>
+
+				<section>
+				<h2>Behavioral Tests</h2>
+					<pre><code data-trim contenteditable>
+*** Test Cases ***
+Valid Login
+	Given browser is opened to login page
+	When user "admin" logs in with password "letmein"
+	Then welcome page should be open
+					</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>Variables</h2>
+						<ul>
+							<li><em>Uncomplicated</em> and <em>easy to create</em></li>
+								<pre><code data-trim contenteditable>
+*** Variables ***
+${BROWSER}        FireFox
+${HOST}           http://www.assurity.co.nz
+${LOGIN_URL}      http://ird.govt.nz
+${WELCOME_URL}    https://ird.govt.nz/Welcome
+								</code></pre>
+
+							<li><em>Override individual variables</em> from the command line</li>
+								<pre><code>pybot --variable BROWSER:IE test_suite</code></pre>
+							<li><em>Reference a Python file</em> with variables as a resource</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Tagging</h2>
+					<ul>
+						<li><em>Simple metadata</em> to categorize test cases</li>
+						<li>Statistics collected <em>automatically</em></li>
+						<li><em>Select test cases</em> for execution</li>
+						<li>Specify <em>criticality</em></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Clear Reports and Detailed Logs</h2>
+					<br>
+						<img data-src="images/reports.jpg">
+				</section>
+
+				
 
 
 
